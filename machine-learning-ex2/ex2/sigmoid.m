@@ -9,9 +9,14 @@ g = zeros(size(z));
 % Instructions: Compute the sigmoid of each value of z (z can be a matrix,
 %               vector or scalar).
 
-g = (1./(1+ (e.^-z)));
+% Vectorized implementation
+g = 1./(1+(exp(-z))); 
+% g = (1./(1+ (e.^-z))); - alternative
 
-
+% Previous unvectorized implementation
+%for i = 1:length(g)
+ % g(i) = 1/(1+e^-z(i));
+%end
 
 % =============================================================
 
