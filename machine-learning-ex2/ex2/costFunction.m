@@ -20,6 +20,17 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+%h = X*theta;
+%sqrErr = (h - y).^2;
+%J = 1/(2*m)*sum(sqrErr) 
+
+%h = sigmoid(X*theta);
+
+%J = 1/m * ((log(h')*-y) - (log(1-h')*(1-y)));
+
+%grad = ((h - y)'*X)/m 
+
+% correct code
 h = sigmoid(X*theta); % size h = 118 rows, 1 column 
 
 J = 1/m * ((log(h') * -y) - (log(1-h') * (1-y)));
